@@ -6,7 +6,7 @@ import inspect
 import time
 import os
 
-Client = discord.Client()
+client = discord.Client()
 client = commands.Bot(command_prefix = "/")
 
 @client.event
