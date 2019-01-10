@@ -3,14 +3,14 @@ from discord.ext.command import Bot
 from discord.ext import commands
 import asyncio
 import time
+import os
 
 Client = discord.Client()
-client = command.Bot(command_prefix = "/"
+client = command.Bot(command_prefix = "/")
 
 @client.event
 async def on_ready():
-print("Bot is in my penis!")
-
+    print("Bot is in my penis!")
 
 def user_is_me(ctx):
     return ctx.message.author.id == "303657894161809412"
@@ -24,4 +24,4 @@ async def _eval(ctx, *, command):
     else:
         await client.say(res)
 
-client.run("TOKEN")
+client.run(os.environ['BOT_TOKEN'])
