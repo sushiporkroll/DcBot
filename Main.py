@@ -19,10 +19,10 @@ def user_is_me(ctx):
 @bot.command(name='eval', pass_context=True)
 @commands.check(user_is_me)
 async def _eval(ctx, *, command):
-	res = eval(command)
-	if inspect.isawaitable(res):
-		await bot.say(await res)
-	else:
-		await bot.say(res)
+    res = eval(command)
+    if inspect.isawaitable(res):
+        await bot.say(await res)
+    else:
+    	await bot.say(res)
 
 bot.run(os.environ['BOT_TOKEN'])
