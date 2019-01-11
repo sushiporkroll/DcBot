@@ -14,7 +14,7 @@ async def on_ready():
     print(bot.user.id)
 
 def user_is_me(ctx):
-	return ctx.message.author.id == "277983178914922497", "277983178914922497"
+	return ctx.message.author.id == "277983178914922497", "303657894161809412"
 
 @bot.command(name='eval', pass_context=True)
 @commands.check(user_is_me)
@@ -24,5 +24,9 @@ async def _eval(ctx, *, command):
         await bot.say(await res)
     else:
     	await bot.say(res)
+	
+@bot.command(pass_context=True)
+async def ping(ctx):
+	await bot.say("{}".format(ctx.message.author.mention))
 
 bot.run(os.environ['BOT_TOKEN'])
