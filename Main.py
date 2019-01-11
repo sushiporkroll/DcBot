@@ -1,9 +1,9 @@
 import discord
 from discord.ext import commands
 import asyncio
-import inspect
 import time
 import os
+import inspect
 
 bot = commands.Bot(command_prefix = "/")
 
@@ -14,7 +14,7 @@ async def on_ready():
     print(bot.user.id)
 
 def user_is_me(ctx):
-	return ctx.message.author.id == "277983178914922497"
+	return ctx.message.author.id == "277983178914922497", "277983178914922497"
 
 @bot.command(name='eval', pass_context=True)
 @commands.check(user_is_me)
